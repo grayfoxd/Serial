@@ -160,19 +160,19 @@ void Serial::ClosePort(int fd)
 
 int  Serial::OpenPort(int index)
 {
-    char *device;
+    const char *device;
     struct termios termios_old;
     int fd;
     switch(index)
     {
-    case COM0:  device="/dev/ttyAMA0";  break;
-    case COM1:  device="/dev/ttyAMA1";  break;
-    case COM2:  device="/dev/ttyAMA2";  break;
-    case COM3:  device="/dev/ttyAMA3";  break;
+//    case COM0:  device="/dev/ttyAMA0";  break;
+//    case COM1:  device="/dev/ttyAMA1";  break;
+//    case COM2:  device="/dev/ttyAMA2";  break;
+//    case COM3:  device="/dev/ttyAMA3";  break;
     case ttyUSB0:  device="/dev/ttyUSB0";  break;
     case ttyUSB1:  device="/dev/ttyUSB1";  break;
     case ttyUSB2:  device="/dev/ttyUSB2";  break;
-    default: device="/dev/ttyAMA2"; break;
+    default: device="/dev/ttyUSB0"; break;
     }
 
     fd = open( device, O_RDWR | O_NOCTTY |O_NONBLOCK);//O_RDWR | O_NOCTTY | O_NDELAY   //O_NONBLOCK

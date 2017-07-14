@@ -1,6 +1,6 @@
 #include "serialtest.h"
 
-int main(int arg,int **agc)
+int main(int arg,char **agc)
 {
      SerialTest serail_test;
 

@@ -1,5 +1,6 @@
 #include "serialtest.h"
-#include <pthread.h>
+#include "jpgtolora.h"
+#include </home/ubuntu/Desktop/pthread.h>
 
 SerialTest::SerialTest()
 {
@@ -53,12 +54,7 @@ int SerialTest::ValueInitOpenSerial(int index)
 
 int SerialTest::Write()
 {
-    char data[10]= {0};
-    data[0] = 0x41;
-    data[1] = 0x54;
-    data[2] = 0x0D;
-    data[3] = 0x0A;
-    if(m_serial->WriteData(m_serial_fd,data,strlen(data)) < 0)
+    if(m_serial->WriteData(m_serial_fd,frame,strlen(frame)) < 0)
     {
            printf("Write Data Fail!\n");
            return -1;
